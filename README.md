@@ -1,5 +1,5 @@
 Mini-project devops n°1
-Equipes : 
+Equipes :
 Paquet Gabriel
 Villanueva Brian
 Mcheik Mohamed
