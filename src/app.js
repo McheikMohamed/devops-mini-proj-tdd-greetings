@@ -1,4 +1,7 @@
 function greet (name) {
+  if (!name) return 'Hello, my friend.'
+  if (name === undefined) return 'Hello, my friend.'
+  if (name === ' ') return 'Hello, my friend.'
   return 'Hello, ' + name + '.'
 }
 module.exports = greet
