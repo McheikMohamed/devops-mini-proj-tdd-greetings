@@ -16,6 +16,9 @@ test('greeting CAPSLOCK name', () => {
 });
 
 test('greeting 2 names', () => {
-
   expect(greet(['Jill','Jane'])).toBe('Hello, Jill and Jane.')
+});
+
+test('greeting more than 2 names', () => {
+  expect(greet(['Amy','Brian','Charlotte'])).toBe('Hello, Amy, Brian and Charlotte.')
 });
