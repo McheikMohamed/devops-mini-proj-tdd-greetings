@@ -10,3 +10,7 @@ test('greeting null', () => {
   expect(greet(undefined)).toBe('Hello, my friend.')
   expect(greet(' ')).toBe('Hello, my friend.')
 })
+
+test('greeting CAPSLOCK name', () => {
+  expect(greet('KENOBI')).toBe('HELLO, KENOBI.')
+})
