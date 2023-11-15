@@ -1,5 +1,5 @@
-const greet = require("./app");
+const greet = require('./app')
 
-const testGreet = new greet();
+const testGreet = new greet()
 
 describe
