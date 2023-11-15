@@ -1,5 +1,6 @@
+/* eslint-disable no-undef */
 const greet = require('./app')
 
-const testGreet = new greet()
-
-describe
+test('greeting a user', () => {
+  expect(greet('Jean-Kevin')).toBe('Hello, Jean-Kevin.')
+})
