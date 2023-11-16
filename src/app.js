@@ -34,28 +34,14 @@ function greet (name, language = 'en') {
         else {
           j++
           if (j === 1) retourPart2 += ' ' + name[i]
-          else if (j === upperNames && language === 'fr') {
-            retourPart2 += ' ET ' + name[i] + ' !'
-          } else if (j === upperNames && language === 'nl') {
-            retourPart2 += ' EN ' + name[i] + ' !'
-          } else if (j === upperNames) {
-            retourPart2 += ' AND ' + name[i] + ' !'
-          } else retourPart2 += ', ' + name[i]
+          else if (j === upperNames && language === 'fr') { retourPart2 += ' ET ' + name[i] + ' !' } else if (j === upperNames && language === 'nl') { retourPart2 += ' EN ' + name[i] + ' !' } else if (j === upperNames) { retourPart2 += ' AND ' + name[i] + ' !' } else retourPart2 += ', ' + name[i]
         }
-      }
-
-      // Other case names part
-      else {
+      } else {
+        // Other case names part
         if (lowerNames === 1) retourPart1 += ', ' + name[i] + '.'
         else {
           k++
-          if (k === lowerNames && language === 'fr') {
-            retourPart1 += ' et ' + name[i] + '.'
-          } else if (k === lowerNames && language === 'nl') {
-            retourPart1 += ' en ' + name[i] + '.'
-          } else if (k === lowerNames) {
-            retourPart1 += ' and ' + name[i] + '.'
-          } else retourPart1 += ', ' + name[i]
+          if (k === lowerNames && language === 'fr') { retourPart1 += ' et ' + name[i] + '.' } else if (k === lowerNames && language === 'nl') { retourPart1 += ' en ' + name[i] + '.' } else if (k === lowerNames) { retourPart1 += ' and ' + name[i] + '.' } else retourPart1 += ', ' + name[i]
         }
       }
     }
