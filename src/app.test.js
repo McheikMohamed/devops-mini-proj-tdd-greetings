@@ -36,9 +36,11 @@ test("greeting in different languages (fr)", () => {
 });
 
 test("greeting in different languages (en)", () => {
-    expect(greet(["Marie", "Amy"], 'en')).toBe("Hello, Marie and Amy.");
+    expect(greet(["Marie", "Amy"], "en")).toBe("Hello, Marie and Amy.");
 });
 
 test("greeting in different languages (nl)", () => {
-    expect(greet(["Marie", "BRIAN", "Amy"], "nl")).toBe("Hallo, Marie en Amy. EN HALLO BRIAN !");
+    expect(greet(["Marie", "BRIAN", "Amy"], "nl")).toBe(
+        "Hallo, Marie en Amy. EN HALLO BRIAN !"
+    );
 });
