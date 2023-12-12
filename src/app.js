@@ -1,4 +1,4 @@
-function greet  (name, language = 'en') {
+function greet (name, language = 'en') {
   if (Array.isArray(name)) {
     // Lowercase/Uppercase names counter
     let upperNames = 0
