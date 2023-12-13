@@ -1,0 +1,42 @@
+name: Pipeline CI devops project 2
+
+on :
+  pull_request : 
+    branches : 
+      -main
+  merge_group :
+    branches : 
+      -main
+      
+jobs :
+  test-and-build : 
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name : check-out files from repository
+        uses : actions/checkout@v2
+      
+      - name : Specify the start time
+        run : echo "start time $(date)"
+         
+      - name : Instal dependency
+        run : npm install
+
+      - name : Prettier
+        run : npx prettier --check && npx prettier--write
+
+      - name : Eslint
+        run : npx eslint . && npx eslint --fix .
+      
+      - name : Jest test
+        run : npx jest --coverage
+
+      - name : Specify the end time
+        run : echo "end time $(date)"
+
+      - name : build project
+        run : npm build
+      
+      - name : Pipeline status
+        if: success()
+        run : echo "PIPELINE SUCCESS WITHOUT ERRORS"
