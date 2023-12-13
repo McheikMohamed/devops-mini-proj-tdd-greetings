@@ -9,11 +9,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check-out files from repository
-        uses: actions/checkout@v2
-
+    
       - name: Specify the start time
         run: echo "Start time $(date)"
+        
+      - name: Check-out files from repository
+        uses: actions/checkout@v2
 
       - name: Install dependencies
         run: npm install
@@ -27,12 +28,12 @@ jobs:
       - name: Jest test
         run: npx jest --coverage
 
-      - name: Specify the end time
-        run: echo "End time $(date)"
-
       - name: Build project
         run: npm run build
-
+        
       - name: Pipeline status
         if: success()
         run: echo "PIPELINE SUCCESS WITHOUT ERRORS"
+
+      - name: Specify the end time
+        run: echo "End time $(date)"
