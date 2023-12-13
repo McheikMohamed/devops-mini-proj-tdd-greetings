@@ -13,11 +13,13 @@ jobs:
       - name: Specify the start time
         run: echo "Start time $(date)"
         
-      - name: Check-out files from repository
-        uses: actions/checkout@v2
+
 
       - name: Install dependencies
         run: npm install
+
+      - name: Check-out files from repository
+        uses: actions/checkout@v2
 
       - name: Prettier
         run: npx prettier --write .
