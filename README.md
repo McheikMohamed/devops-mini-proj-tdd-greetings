@@ -46,32 +46,49 @@ Liens utiles:
 
 - Décrivez brièvement ce que fait votre fichier YML.  
 ```bash
-
 < Mon fichier YML effectue les taches demandé ci-dessus, il sert a effectué l'integration continue en fonction de ce qui est rechercher.
- Le fichier YML est écrit de manière a vérifier toutes les choses voulut tout seul lors d'un évenement quelconque sur le repertoire, tel qu'un push , pull , merge >
-
+ Le fichier YML est écrit de manière a vérifier toutes les choses voulut tout seul lors d'un évenement sur le repertoire, tel qu'un push , pull , merge >
 ```
+
 - En particulier : à quoi sert le “on” ? dans votre fichier YML ?  Quelle est la différence entre “on push” et “on pull request”. Que conseilleriez-vous comme option parmi ces 2 options à un groupe de développeurs junior ? Pourquoi ? 
 ```bash
-
-< Il sert a définir a quel evenement effectué sur le repertoire, la pipeline doit être activé >
+< Il sert a définir l'évenement qui provoque l'activation de la pipeline.
+ exemple : " on : push " Lorsque l'on fait un git push la pipeline effectuera toutes les étapes qu'elle doit faire >
 ```
+
 - Quelle est la différence entre run et run_on ?  Expliquez par rapport à votre pipeline.  
 ```bash
-
-< run_on Indique le type de machine sur laquelle exécuter le travail >
+< run_on Indique le type de machine sur laquelle exécuter le travail
+  run permet d'utilisé les differentes commandes liées à notre code tel que les dépendaces (Prettier , Eslint , Jest) >
 ```
+
 - Quelle est la différence entre “use” et “run”. Expliquez par rapport à votre pipeline. 
 ```bash
 < "use" est utilisé pour les commandes directement lié a la préconstruction du pipeline, les commandes lié a githubAction dans notre cas.
  "run" est utilisé pour les commandes de notre code , tels que l'utilisation des differents packages , exemples :  "npm prettier , npm eslint" >
 ```
+
 - Peut-on intervertir différentes étapes dans votre pipeline ? Que votre réponse soit oui ou non, expliquez par rapport à votre pipeline. 
 ```bash
-<votre réponse ici>
+< Certaine étapes peuvent être interverti tel que l'utilisation de Prettier et Eslint, mais avant l'utilisation des commandes "run" et donc des differents packages du code,
+il est obligatoire de faire le "uses: actions/checkout@v2" .  >
 ```
+
 - Je veux ajouter un test de sécurité sur mon pipeline en exécutant le programme secure_app. Que devrais-je faire ?  Quelles questions devriez-vous vous poser ? 
 ```bash
-<votre réponse ici>
+<Les différentes questions a posée sont :   Ou integrer le programme ?  Avant le déploiement mais après les test unitaires 
+                                            Comment l'integrer ? Grace a une commande ou bien une api
+                                            Quels sont les paramètres de mon secure_app ?
+                                            Est ce que toutes les dépendances sont installé pour mon secure_app?
+                                            Comment gerer les problèmes si le secure_app indique une faille de sécurité ?
+                                            Est ce que le progamme secure_app a un grand impact sur les perfomances de ma pipeline?
+                                            Verifier si la secure_app ne créer pas une faille de sécurite elle-même ?
+                                            Comment tester l'éfficacité de la secure_app ?
+                                            Comment documenter les résultats de la secure_app ?
+
+                                            On devrait créeer une moyen d'integrer l'application et après vérification,
+                                            l'utilisé dans notre pipeline avec un "run" comme pour nos autres commandes.
+
+>
 ```
 
