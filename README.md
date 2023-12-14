@@ -47,13 +47,19 @@ Liens utiles:
 - Décrivez brièvement ce que fait votre fichier YML.  
 ```bash
 < Mon fichier YML effectue les taches demandé ci-dessus, il sert a effectué l'integration continue en fonction de ce qui est rechercher.
- Le fichier YML est écrit de manière a vérifier toutes les choses voulut tout seul lors d'un évenement sur le repertoire, tel qu'un push , pull , merge >
+ Le fichier YML est écrit de manière a vérifier toutes les choses voulut tout seul lors d'un évenement sur le repertoire, tel qu'un push , pull_request , merge >
 ```
 
 - En particulier : à quoi sert le “on” ? dans votre fichier YML ?  Quelle est la différence entre “on push” et “on pull request”. Que conseilleriez-vous comme option parmi ces 2 options à un groupe de développeurs junior ? Pourquoi ? 
 ```bash
 < Il sert a définir l'évenement qui provoque l'activation de la pipeline.
- exemple : " on : push " Lorsque l'on fait un git push la pipeline effectuera toutes les étapes qu'elle doit faire >
+ " on push " : Le workflow sera déclenché a chaque fois qu'un commit sera push sur la branche précisé dans le fichier Yaml
+ "on pull_request" : Le workflow sera déclenché a chaque fois qu'un pull_request est créer , modifier , ou fermée.
+
+Pour un groupe de développeurs junior, le meilleur serai de faire un "on pull_request", car cela permettrait d'éviter les conflits et garder un code de qualité sur la branche principale,
+tout en donnant l'occasion de discuter du code avec d'autre personnes, parceque celui-ci sera disponible dans la branche sur laquelle le développeurs aura codé.
+Mais l'utilisation des deux peut toutefois être bénéfique sur certaines branches, tels qu'un déploiement automatique ou bien un test de build rapide.
+ >
 ```
 
 - Quelle est la différence entre run et run_on ?  Expliquez par rapport à votre pipeline.  
@@ -71,7 +77,7 @@ Liens utiles:
 - Peut-on intervertir différentes étapes dans votre pipeline ? Que votre réponse soit oui ou non, expliquez par rapport à votre pipeline. 
 ```bash
 < Certaine étapes peuvent être interverti tel que l'utilisation de Prettier et Eslint, mais avant l'utilisation des commandes "run" et donc des differents packages du code,
-il est obligatoire de faire le "uses: actions/checkout@v2" .  >
+il est obligatoire de faire le "uses: actions/checkout@v2" . Afin que la pipelines sache sur quelles fichiers travailler  >
 ```
 
 - Je veux ajouter un test de sécurité sur mon pipeline en exécutant le programme secure_app. Que devrais-je faire ?  Quelles questions devriez-vous vous poser ? 
