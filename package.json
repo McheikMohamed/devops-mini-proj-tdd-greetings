@@ -4,6 +4,7 @@
     "description": "Devops first Project\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[p\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[D\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b",
     "main": "index.js",
     "scripts": {
+        "build": "node src/app.js",
         "test": "jest --coverage",
         "test:watch": "jest --watchAll",
         "prettier": "prettier --check .",
@@ -19,6 +20,7 @@
     "devDependencies": {
         "cz-conventional-changelog": "^3.3.0",
         "eslint": "^8.53.0",
+        "eslint-config-prettier": "^9.1.0",
         "eslint-config-standard": "^17.1.0",
         "eslint-plugin-import": "^2.29.0",
         "eslint-plugin-n": "^16.3.1",
