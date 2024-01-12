@@ -4,7 +4,6 @@
     "description": "Devops first Project\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[p\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[D\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b",
     "main": "index.js",
     "scripts": {
-        "build": "node src/app.js",
         "test": "jest --coverage",
         "test:watch": "jest --watchAll",
         "prettier": "prettier --check .",
