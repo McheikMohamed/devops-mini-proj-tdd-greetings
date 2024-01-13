@@ -1,0 +1,37 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+  - task: NodeTool@0
+    inputs:
+        versionSpec: "18.x"
+    displayName: "Install Node.js"
+
+  - script: npm install
+    displayName: "Installing  dependency"
+
+  - script: npx prettier --write .
+    displayName: "Prettier"
+
+  - script: npx eslint --fix .
+    displayName: "Eslint"
+
+  - script: npx jest --coverage
+    displayName: "Jest test"
+
+  - script: npm run build
+    displayName: "Build project"
+
+  - script: echo "PIPELINE SUCCESS WITHOUT ERRORS"
+    displayName: "Pipeline status"
+
+  - script: echo "End time $(date)"
+    displayName: "Specify the end time"
