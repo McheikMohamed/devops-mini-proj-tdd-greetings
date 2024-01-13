@@ -39,7 +39,7 @@ steps:
 
   - task: AzureStaticWebApp@0
     inputs:
-      output_location: '/dist'
+      app_location: '/dist'
       skip_app_build: true
       skip_api_build: true
       azure_static_web_apps_api_token: '0d7152e57e08ab660e9cc31dc5d6afdc85bd357929390bae6cf54928705e85384-f047630f-7204-423a-8f4c-7a2a9d79fd1c003345835'
